@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.1",
+    "page_service": "file:"
+  },
+  "name": "page_service",
+  "version": "1.0.0",
+  "description": "page service for social media",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "page_service"
+  ],
+  "author": "goddie9x",
+  "license": "MIT"
+}
