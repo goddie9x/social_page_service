@@ -20,16 +20,16 @@ class PageController extends BasicController {
         try {
             await pageService.deletePage({ ...req.params, ...req.body });
 
-            res.status(201).json({ message: 'Delete page successful' });
+            res.status(204).json({ message: 'Delete page successful' });
         } catch (error) {
             return this.handleResponseError(res, error);
         }
     }
     async findPageById(req, res) {
         try {
-            const page = await pageService.findPageById(req.body);
+            const page = await pageService.findPageById({ ...req.params, ...req.body });
 
-            res.status(201).json(page);
+            res.status(200).json(page);
         } catch (error) {
             return this.handleResponseError(res, error);
         }
@@ -38,7 +38,7 @@ class PageController extends BasicController {
         try {
             const pageFollow = await pageService.followPage(req.body);
 
-            res.status(201).json(pageFollow);
+            res.status(200).json(pageFollow);
         } catch (error) {
             return this.handleResponseError(res, error);
         }
@@ -47,7 +47,7 @@ class PageController extends BasicController {
         try {
             const result = await pageService.getAllPageWhichUserFollowingWithPaginate(req.query);
 
-            res.status(201).json(result);
+            res.status(200).json(result);
         } catch (error) {
             return this.handleResponseError(res, error);
         }
@@ -56,7 +56,7 @@ class PageController extends BasicController {
         try {
             const page = await pageService.getAllPageWhichUserManagerWithPaginate(req.query);
 
-            res.status(201).json(page);
+            res.status(200).json(page);
         } catch (error) {
             return this.handleResponseError(res, error);
         }
@@ -65,7 +65,7 @@ class PageController extends BasicController {
         try {
             await pageService.unFollowPage({ ...req.params, ...req.body });
 
-            res.status(201).json({message:'Unfollow page successful'});
+            res.status(203).json({ message: 'Unfollow page successful' });
         } catch (error) {
             return this.handleResponseError(res, error);
         }
@@ -74,7 +74,7 @@ class PageController extends BasicController {
         try {
             const page = await pageService.updatePage(req.body);
 
-            res.status(201).json(page);
+            res.status(203).json(page);
         } catch (error) {
             return this.handleResponseError(res, error);
         }

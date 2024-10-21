@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "dotenv": "^16.4.5",
+    "eureka-js-client": "^4.5.0",
     "express": "^4.21.1",
     "mongoose": "^8.7.1",
     "page_service": "file:"
