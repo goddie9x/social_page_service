@@ -74,7 +74,7 @@ class PageService extends BasicService {
     }
     async followPage({ currentUser, id }) {
         const page = await this.findPageById(id);
-        const existFollow = PageFollow.findOne({
+        const existFollow = await PageFollow.findOne({
             user: currentUser.userId,
             page: page._id,
         });
