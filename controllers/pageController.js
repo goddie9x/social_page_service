@@ -45,11 +45,15 @@ class PageController extends BasicController {
     }
     async getAllPageWhichUserFollowingWithPaginate(req, res) {
         try {
-            const { currentUser, ...query } = req.query;
+            const currentUser = req.body.currentUser;
+            if (!currentUser?.userId) {
+                return res.status(401).json({ error: 'Authentication required' });
+            }
+            const { currentUser: _ignored, ...query } = req.query;
             // Always scope to the authenticated user - never trust a userId from query
             const result = await pageService.getAllPageWhichUserFollowingWithPaginate({
                 ...query,
-                userId: req.body.currentUser?.userId,
+                userId: currentUser.userId,
             });
 
             res.status(200).json(result);
