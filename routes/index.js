@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const pageController = require('../controllers/pageController');
-const mapHealthStatusRoute = require('../utils/eureka/healthStatusRoute');
+const mapHealthStatusRoute = require('@godsocial/utils/eureka/healthStatusRoute');
 
 mapHealthStatusRoute(router);
 router.post('/create',pageController.createPage);

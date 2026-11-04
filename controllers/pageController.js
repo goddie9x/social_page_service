@@ -1,6 +1,6 @@
 const pageService = require('../services/pageService');
-const bindMethodsWithThisContext = require('../utils/classes/bindMethodsWithThisContext');
-const BasicController = require('../utils/controllers/basicController');
+const bindMethodsWithThisContext = require('@godsocial/utils/classes/bindMethodsWithThisContext');
+const BasicController = require('@godsocial/utils/controllers/basicController');
 
 class PageController extends BasicController {
     constructor() {

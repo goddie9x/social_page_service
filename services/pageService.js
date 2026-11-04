@@ -1,10 +1,10 @@
 const Page = require('../models/page');
 const PageFollow = require('../models/pageFollow');
-const BasicService = require('../utils/services/basicService');
-const bindMethodsWithThisContext = require('../utils/classes/bindMethodsWithThisContext');
-const { TargetNotExistException, IncorrectPermission, BadRequestException, TargetAlreadyExistException } = require('../utils/exceptions/commonExceptions');
-const { updateObjectIfUpdateFieldDataDefined } = require('../utils/objects');
-const { ROLES } = require('../utils/constants/users');
+const BasicService = require('@godsocial/utils/services/basicService');
+const bindMethodsWithThisContext = require('@godsocial/utils/classes/bindMethodsWithThisContext');
+const { TargetNotExistException, IncorrectPermission, BadRequestException, TargetAlreadyExistException } = require('@godsocial/utils/exceptions/commonExceptions');
+const { updateObjectIfUpdateFieldDataDefined } = require('@godsocial/utils/objects');
+const { ROLES } = require('@godsocial/utils/constants/users');
 
 class PageService extends BasicService {
     constructor() {
